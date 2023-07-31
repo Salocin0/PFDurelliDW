@@ -1,0 +1,22 @@
+@import './mixin.scss';
+
+//DISEÑO FORM CONTACTO
+.center-outer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    background-color: $color-Gris-oscuro;
+    color: $color-Blanco;
+}
+
+//ALTURA DIV CONTACTO
+.divimgcontacto {
+    height: 200px;
+}
+
+//SOMBRA IMAGEN
+img {
+    @include box-shadow-mixin(4px, 4px);
+}

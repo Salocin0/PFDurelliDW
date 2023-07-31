@@ -1,0 +1,54 @@
+//CONFIGURACIONES RESPONSIVE
+@media (max-width: 767px) {
+  .center-outer-container {
+    top: calc(50% - 25px);
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+  }
+
+  .letraclara {
+    color: $color-Blanco;
+  }
+}
+
+@media (max-width: 991px) {
+  .card-img-top {
+    height: 150px;
+  }
+
+  .cont-imagen {
+    height: 150px;
+  }
+
+  .card {
+    height: 370px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-img-top {
+    height: 120px;
+  }
+
+  .cont-imagen {
+    height: 120px;
+  }
+
+  .card {
+    height: 400px;
+  }
+}
+
+@media (max-width: 424px) {
+  .card-img-top {
+    height: 80px;
+  }
+
+  .cont-imagen {
+    height: 80px;
+  }
+
+  .card {
+    height: 470px;
+  }
+}

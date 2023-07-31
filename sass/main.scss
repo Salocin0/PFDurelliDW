@@ -1,5 +1,12 @@
-//VARIABLES
-$color-primary: #508EED;
+@import './partials/variables.scss';
+@import './partials/animaciones.scss';
+@import './partials/contacto.scss';
+@import './partials/habilidades.scss';
+@import './partials/inicio.scss';
+@import './partials/proyectos.scss';
+@import './partials/responsive.scss';
+@import './partials/sobremi.scss';
+@import './partials/mixin.scss';
 
 //RESET
 * {
@@ -9,29 +16,19 @@ $color-primary: #508EED;
 
 //GRADIENTE DE FONDO
 .colorbg {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(20, 34, 85, 1) 10%, rgba(34, 60, 121, 1) 20%, rgba(53, 94, 169, 1) 30%, rgba(64, 114, 197, 1) 40%, rgba(80, 142, 237, 1) 50%, rgba(59, 160, 242, 1) 60%, rgba(53, 166, 244, 1) 70%, rgba(38, 178, 247, 1) 80%, rgba(27, 188, 249, 1) 90%, rgba(14, 199, 252, 1) 100%);
+  background: $color-NAOscuro;
+  background: $gradiente-NegroAzul;
 
 }
 
 //TITULOS BLANCOS
 .tituloclaro {
-  color: white;
+  color: $color-Blanco;
 }
 
 //FONDOS BLANCOS
 .colorw {
-  background-color: white;
-}
-
-//DISEÑO IMAGEN INICIO
-.img-back-inicio {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../img/indexbackground.jpg');
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  color: white;
+  background-color: $color-Blanco;
 }
 
 //CONTENEDORES DIV QUE TENGAN IMAGENES
@@ -45,17 +42,13 @@ $color-primary: #508EED;
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
+    @include box-shadow-mixin(4px, 4px);
   }
 }
 
 //FORMATEO ETIQUETA A
 a {
   text-decoration: none;
-}
-
-//ALTO DIV SOBRE MI
-.divbotonessobremi {
-  height: 100px;
 }
 
 //ALTO DIV TITULO
@@ -81,55 +74,44 @@ a {
   align-items: center;
   justify-content: flex-start;
   border-radius: 15px;
-  background-color: #ccc;
+  background-color: $color-Gris;
 
   img {
     width: 100%;
     height: 100%;
     border-radius: 15px 15px 0 0;
     object-fit: cover;
+    @include box-shadow-mixin(4px, 4px);
   }
 
   h3 {
     margin-top: 10px;
-    color: black;
+    color: $color-Negro;
   }
-}
-
-//DISEÑO FORM CONTACTO
-.center-outer-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 15px;
-  background-color: #303443;
-  color: white;
 }
 
 //BORDE IMG
 .rad-img {
   border-radius: 15px;
-
 }
 
 //DISEÑO FOOTER
 section {
   footer.fixed-bottom {
     div {
-      background-color: #303443 !important;
-      color: white !important;
+      background-color: $color-Gris-oscuro !important;
+      color: $color-Blanco !important;
     }
   }
 }
 
 //DISEÑO NAVBAR
 .navbar {
-  background-color: #303443 !important;
+  background-color: $color-Gris-oscuro !important;
   padding: 10px;
 
   a.nav-link {
-    color: white !important;
+    color: $color-Blanco !important;
     text-decoration: none;
     font-weight: normal;
     display: inline-block;
@@ -137,65 +119,28 @@ section {
     border-radius: 20px;
 
     &:hover {
-      background: $color-primary;
+      background: $color-Azul;
       border-radius: 20px;
     }
   }
 }
 
-//ANIMACION BOTONES
-@keyframes myAnim {
-
-  0%,
-  100% {
-    transform: rotate(0deg);
-    transform-origin: 50% 50%;
-  }
-
-  10% {
-    transform: rotate(8deg);
-  }
-
-  20%,
-  40%,
-  60% {
-    transform: rotate(-10deg);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: rotate(10deg);
-  }
-
-  80% {
-    transform: rotate(-8deg);
-  }
-
-  90% {
-    transform: rotate(8deg);
-  }
-}
-
 //DISEÑO BOTONES HOVER
 .btn:hover {
+  @include box-shadow-mixin(2px, 2px);
   animation: myAnim 3s linear 0s infinite normal none;
-  background: #39BA94;
+  background: $color-Verde;
   border: none;
-  border: 1px solid black;
+  border: 1px solid $color-Negro;
 }
 
 //DISEÑO BOTONES HOVER
 .btn {
-  background: #39BA94;
+  @include box-shadow-mixin(2px, 2px);
+  background: $color-Verde;
   border: none;
   border-radius: 20px;
-  border: 1px solid black;
-}
-
-//ALTURA DIV CONTACTO
-.divimgcontacto {
-  height: 200px;
+  border: 1px solid $color-Negro;
 }
 
 //DISEÑO IMG FONDO
@@ -203,59 +148,4 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-//CONFIGURACIONES RESPONSIVE
-@media (max-width: 767px) {
-  .center-outer-container {
-    top: calc(50% - 25px);
-    max-height: calc(100vh - 200px);
-    overflow-y: auto;
-  }
-
-  .letraclara {
-    color: white;
-  }
-}
-
-@media (max-width: 991px) {
-  .card-img-top {
-    height: 150px;
-  }
-
-  .cont-imagen {
-    height: 150px;
-  }
-
-  .card {
-    height: 370px;
-  }
-}
-
-@media (max-width: 767px) {
-  .card-img-top {
-    height: 120px;
-  }
-
-  .cont-imagen {
-    height: 120px;
-  }
-
-  .card {
-    height: 400px;
-  }
-}
-
-@media (max-width: 424px) {
-  .card-img-top {
-    height: 80px;
-  }
-
-  .cont-imagen {
-    height: 80px;
-  }
-
-  .card {
-    height: 470px;
-  }
 }

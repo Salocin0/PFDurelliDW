@@ -1,0 +1,11 @@
+@import './mixin.scss';
+
+//ALTO DIV SOBRE MI
+.divbotonessobremi {
+    height: 100px;
+}
+
+//SOMBRA IMAGEN
+img {
+    @include box-shadow-mixin(4px, 4px);
+}
